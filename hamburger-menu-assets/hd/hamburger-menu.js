@@ -7,6 +7,7 @@ window.onload = function () {
     var screenWidthHg = window.innerWidth;
     var hamburger = true;
 
+    // ブラウザのウィンドウ幅で表示を変更
     function screenHg() {
         if (hamburger && screenWidthHg < 768) {
             hamburgerButton.classList.add('is-hg-active');
@@ -26,10 +27,14 @@ window.onload = function () {
             hamburger = true;
         }
     }
+
+    // ページを開いた時のウィンドウ幅で表示
     if (screenWidthHg > 768) {
         hamburger = false;
     }
     screenHg();
+
+    // ウィンドウ幅が変わるたびに表示を判定する
     window.onresize = function () {
         screenWidthHg = window.innerWidth;
         screenHg();
