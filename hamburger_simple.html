@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<title>シンプルハンバーガーメニュー</title>
+
+	<!-- stylesheets -->
+	<link rel="stylesheet" href="hamburger-menu-assets/simple/hamburger-menu.css">
+	<style>
+		body {
+			margin: 0;
+		}
+
+		#content {
+			overflow: hidden;
+		}
+
+		#content div {
+			height: 100vh;
+			width: 100vw;
+		}
+
+		#orange {
+			background: orange;
+		}
+
+		#lime {
+			background: lime;
+		}
+
+		#yellow {
+			background: yellow;
+		}
+
+		#aqua {
+			background: aqua;
+		}
+	</style>
+
+	<!-- js -->
+	<script src="hamburger-menu-assets/simple/hamburger-menu.js"></script>
+</head>
+
+<body>
+	<!-- ここからハンバーガーメニュー -->
+	<div class="hamburger-menu__hamburger-button is-hg-active" id="js-hamburger-button">
+		<img src="hamburger-menu-assets/img/hamburger.svg" alt="メニューを開く">
+	</div>
+	<div class="hamburger-menu__cross-button" id="js-cross-button">
+		<img src="hamburger-menu-assets/img/cross.svg" alt="メニューを閉じる">
+	</div>
+	<nav class="hamburger-menu__nav" id="js-hg-menu">
+		<ul>
+			<li><a href="#orange">orange</a></li>
+			<li><a href="#lime">lime</a></li>
+			<li><a href="#yellow">yellow</a></li>
+			<li><a href="#aqua">aqua</a></li>
+		</ul>
+	</nav>
+	<!-- ここまでハンバーガーメニュー -->
+
+	<div id="content">
+		<div id="orange"></div>
+		<div id="lime"></div>
+		<div id="yellow"></div>
+		<div id="aqua"></div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+@charset "utf-8";
+
+/* メニュー開閉ボタン
+------------------------------- */
+.hamburger-menu__hamburger-button {
+  z-index: 200;
+  background: rgba(0, 0, 0, 0.6);
+}
+.hamburger-menu__cross-button {
+  z-index: 100;
+}
+.hamburger-menu__hamburger-button,
+.hamburger-menu__cross-button {
+  width: 60px;
+  height: 60px;
+  display: inline-block;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  line-height: 80px;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.hamburger-menu__hamburger-button > img,
+.hamburger-menu__cross-button > img {
+  width: 50%;
+  height: 50%;
+}
+
+/* メニュー
+------------------------------- */
+.hamburger-menu__nav,
+.hamburger-menu__nav ul {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.hamburger-menu__nav {
+  padding: 0 10%;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hamburger-menu__nav li {
+  list-style: none;
+}
+.hamburger-menu__nav li + li {
+  border-top: solid 1px #fff;
+}
+.hamburger-menu__nav li a {
+  padding: 10px 0;
+  width: 80vw;
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  transition: 0.4s;
+  cursor: pointer;
+}
+.hamburger-menu__nav li a:hover {
+  opacity: 0.6;
+}
+
+/* フェードインフェードアウトtransition
+------------------------------- */
+.hamburger-menu__hamburger-button,
+.hamburger-menu__cross-button,
+.hamburger-menu__nav {
+  opacity: 0;
+  transition: 0.8s;
+}
+.is-hg-active {
+  opacity: 1;
+}
+
+@media screen and (min-width: 768px) {
+  /* メニュー
+    ------------------------------- */
+  .hamburger-menu__nav {
+    opacity: 1;
+    padding: 0;
+    width: 100vw;
+    height: auto;
+    display: block;
+  }
+  .hamburger-menu__nav ul {
+    display: flex;
+  }
+  .hamburger-menu__nav ul li {
+    flex: 1;
+  }
+  .hamburger-menu__nav li + li {
+    border-left: solid 1px rgba(255, 255, 255, 0.6);
+    border-top: none;
+  }
+  .hamburger-menu__nav li a {
+    padding: 0;
+    width: auto;
+    height: 60px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+}
