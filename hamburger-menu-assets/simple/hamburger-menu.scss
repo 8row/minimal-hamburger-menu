@@ -1,13 +1,14 @@
-@charset "UTF-8";
+@charset "utf-8";
+
 /* メニュー開閉ボタン
 ------------------------------- */
 .hamburger-menu__hamburger-button {
   z-index: 200;
-  background: rgba(0, 0, 0, 0.6); }
-
+  background: rgba(0, 0, 0, 0.6);
+}
 .hamburger-menu__cross-button {
-  z-index: 100; }
-
+  z-index: 100;
+}
 .hamburger-menu__hamburger-button,
 .hamburger-menu__cross-button {
   width: 60px;
@@ -19,15 +20,22 @@
   line-height: 80px;
   text-align: center;
   border-radius: 50%;
-  cursor: pointer; }
-  .hamburger-menu__hamburger-button img,
-  .hamburger-menu__cross-button img {
+  cursor: pointer;
+  img {
     width: 50%;
-    height: 50%; }
+    height: 50%;
+  }
+}
 
 /* メニュー
 ------------------------------- */
 .hamburger-menu__nav {
+  &,
+  ul {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
   padding: 0 10%;
   width: 100vw;
   height: 100vh;
@@ -37,37 +45,28 @@
   left: 0;
   z-index: -1;
   text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center; }
-  .hamburger-menu__nav,
-  .hamburger-menu__nav ul {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0; }
-  .hamburger-menu__nav li {
-    list-style: none; }
-    .hamburger-menu__nav li + li {
-      border-top: solid 1px #fff; }
-    .hamburger-menu__nav li a {
+  justify-content: center;
+  li {
+    list-style: none;
+    + li {
+      border-top: solid 1px #fff;
+    }
+    a {
       padding: 10px 0;
       width: 80vw;
       color: #fff;
       text-decoration: none;
       display: block;
-      -webkit-transition: 0.4s;
-      -o-transition: 0.4s;
       transition: 0.4s;
-      cursor: pointer; }
-      .hamburger-menu__nav li a:hover {
-        opacity: 0.6; }
+      cursor: pointer;
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+}
 
 /* フェードインフェードアウトtransition
 ------------------------------- */
@@ -75,13 +74,11 @@
 .hamburger-menu__cross-button,
 .hamburger-menu__nav {
   opacity: 0;
-  -webkit-transition: 0.8s;
-  -o-transition: 0.8s;
-  transition: 0.8s; }
-  .hamburger-menu__hamburger-button.is-hg-active,
-  .hamburger-menu__cross-button.is-hg-active,
-  .hamburger-menu__nav.is-hg-active {
-    opacity: 1; }
+  transition: 0.8s;
+  &.is-hg-active {
+    opacity: 1;
+  }
+}
 
 @media screen and (min-width: 768px) {
   /* メニュー開閉ボタン
@@ -89,9 +86,13 @@
   .hamburger-menu__hamburger-button,
   .hamburger-menu__cross-button {
     top: 40px;
-    right: 40px; }
+    right: 40px;
+  }
+
   /* メニュー
     ------------------------------- */
   .hamburger-menu__nav li a {
     padding: 12px 100px;
-    width: auto; } }
+    width: auto;
+  }
+}

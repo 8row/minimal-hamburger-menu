@@ -4,6 +4,8 @@ window.onload = function () {
     var hamburgerButton = document.getElementById('js-hamburger-button');
     var crossButton = document.getElementById('js-cross-button');
     var hamburgerMenu = document.getElementById('js-hg-menu');
+    // スムーススクロールと競合防ぐため細かく選択している
+    var hamburgerMenuList = document.querySelectorAll('#js-hg-menu a[href^="#"]');
     var screenWidthHg = window.innerWidth;
     var hamburger = true;
 
@@ -39,9 +41,6 @@ window.onload = function () {
         screenWidthHg = window.innerWidth;
         screenHg();
     }
-
-    // スムーススクロールと競合防ぐため細かく選択している
-    var hamburgerMenuList = document.querySelectorAll('#js-hg-menu a[href^="#"]');
 
     function hamburgerMenuOn() {
         hamburgerButton.classList.remove('is-hg-active');
