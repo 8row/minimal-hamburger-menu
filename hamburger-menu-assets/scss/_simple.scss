@@ -1,0 +1,18 @@
+//simpleバージョンのPC用表示
+/* PC用表示 */
+@media screen and (min-width: $breakPoint) {
+  /* メニュー開閉ボタン
+    ------------------------------- */
+  .hamburger-menu__hamburger-button,
+  .hamburger-menu__cross-button {
+    top: $pc-display-space;
+    right: $pc-display-space;
+  }
+
+  /* メニュー
+    ------------------------------- */
+  .hamburger-menu__nav li a {
+    padding: 12px 100px;
+    width: auto;
+  }
+}

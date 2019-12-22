@@ -1,0 +1,14 @@
+//スマホとPCを切り替えるブレークポイント
+$breakPoint: 768px;
+
+//PCの広いスクリーンで表示した際の中央固定幅
+$wide-screen: 1200px;
+
+//ナビのリストを分ける白い棒
+$white-border: solid 1px rgba(255, 255, 255, 0.6);
+
+//スマホで表示した際のディスプレイの端からボタンの距離
+$sp-display-space: 5vw;
+
+//PCで表示した際のディスプレイの端からボタンの距離
+$pc-display-space: 40px;

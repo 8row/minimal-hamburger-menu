@@ -1,17 +1,17 @@
 'use strict';
 
 window.onload = function () {
+    var breakPoint = 768; //ハンバーガーメニューとヘッダーメニューの表示を切り替えるディスプレイ幅
     var hamburgerButton = document.getElementById('js-hamburger-button');
     var crossButton = document.getElementById('js-cross-button');
     var hamburgerMenu = document.getElementById('js-hg-menu');
-    // スムーススクロールと競合防ぐため細かく選択している
-    var hamburgerMenuList = document.querySelectorAll('#js-hg-menu a[href^="#"]');
     var screenWidthHg = window.innerWidth;
     var hamburger = true;
+    var hamburgerMenuList = document.querySelectorAll('#js-hg-menu a[href^="#"]'); // スムーススクロールと競合防ぐため細かく選択している
 
     // ブラウザのウィンドウ幅で表示を変更
     function screenHg() {
-        if (hamburger && screenWidthHg < 768) {
+        if (hamburger && screenWidthHg < breakPoint) {
             hamburgerButton.classList.add('is-hg-active');
             hamburgerButton.style.zIndex = 200;
             crossButton.classList.remove('is-hg-active');
@@ -19,7 +19,7 @@ window.onload = function () {
             hamburgerMenu.classList.remove('is-hg-active');
             hamburgerMenu.style.zIndex = -1;
             hamburger = false;
-        } else if (!hamburger && screenWidthHg >= 768) {
+        } else if (!hamburger && screenWidthHg >= breakPoint) {
             hamburgerButton.classList.remove('is-hg-active');
             hamburgerButton.style.zIndex = -100;
             crossButton.classList.remove('is-hg-active');
@@ -31,7 +31,7 @@ window.onload = function () {
     }
 
     // ページを開いた時のウィンドウ幅で表示
-    if (screenWidthHg > 768) {
+    if (screenWidthHg > breakPoint) {
         hamburger = false;
     }
     screenHg();
@@ -59,7 +59,7 @@ window.onload = function () {
     // クロスボタン、メニューをクリックしてメニューを非表示
     // ハンバーガーボタンを表示する
     function hamburgerMenuOff() {
-        if (screenWidthHg < 768) {
+        if (screenWidthHg < breakPoint) {
             hamburgerButton.classList.add('is-hg-active');
             hamburgerButton.style.zIndex = 200;
             crossButton.classList.remove('is-hg-active');
@@ -85,4 +85,21 @@ window.onload = function () {
             hamburgerMenuOff();
         }
     });
+
+
+    // スクロール時のページトップへ移動ボタンのフェードイン
+    /* ページトップへ移動ボタンを使用する場合はコメントアウト削除
+    var scrollMvPx = 100; //設定した数値分のpxを移動するとページトップへ移動ボタンがフェードインする
+    var minimalPageTop = document.getElementById('js-minimal-page-top');
+    var pageTopOn = false;
+    window.onscroll = function () {
+        if (pageTopOn === false && window.pageYOffset > scrollMvPx) {
+            minimalPageTop.classList.add('is-mn-active');
+            pageTopOn = true;
+        } else if (pageTopOn === true && window.pageYOffset <= scrollMvPx) {
+            minimalPageTop.classList.remove('is-mn-active');
+            pageTopOn = false;
+        }
+    };
+    */
 }
