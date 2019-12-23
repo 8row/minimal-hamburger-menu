@@ -1,6 +1,7 @@
 /* 付属のページトップボタンを使う場合の設定
 ------------------------------- */
 .minimal-page-top {
+  z-index: 10;
   background: rgba(0, 0, 0, 0.5);
   width: 60px;
   height: 60px;
