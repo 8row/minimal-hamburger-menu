@@ -9,6 +9,9 @@ window.onload = function () {
     var hamburger = true;
     var hamburgerMenuList = document.querySelectorAll('#js-hg-menu a[href^="#"]'); // スムーススクロールと競合防ぐため細かく選択している
 
+    // hdバージョン用にcss適用する
+    hamburgerMenu.classList.add('only-hd');
+
     // ブラウザのウィンドウ幅で表示を変更
     function screenHg() {
         if (hamburger && screenWidthHg < breakPoint) {

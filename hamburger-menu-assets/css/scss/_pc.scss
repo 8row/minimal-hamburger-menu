@@ -1,9 +1,23 @@
-//hdバージョンのPC用表示
 /* PC用表示 */
 @media screen and (min-width: $breakPoint) {
-  /* メニュー
+  /* メニュー開閉ボタン simpleバージョン用
     ------------------------------- */
-  .hamburger-menu__nav {
+  .hamburger-menu__hamburger-button,
+  .hamburger-menu__cross-button {
+    top: $pc-display-space;
+    right: $pc-display-space;
+  }
+
+  /* メニュー simpleバージョン用
+    ------------------------------- */
+  .hamburger-menu__nav li a {
+    padding: 12px 100px;
+    width: auto;
+  }
+
+  /* メニュー hdバージョン用
+    ------------------------------- */
+  .only-hd.hamburger-menu__nav {
     opacity: 1;
     padding: 0;
     width: 100vw;
@@ -38,9 +52,9 @@
 
 /* PCの広いスクリーンで表示した際の中央固定 */
 @media screen and (min-width: $wide-screen) {
-  /* メニュー
+  /* メニュー hdバージョン用
     ------------------------------- */
-  .hamburger-menu__nav ul {
+  .only-hd.hamburger-menu__nav ul {
     margin: auto;
     width: $wide-screen;
     border: {
