@@ -1,12 +1,12 @@
 'use strict';
 
-window.onload = function () {
-    const hamburgerButton = document.getElementById('js-hamburger-button');
-    const crossButton = document.getElementById('js-cross-button');
-    const hamburgerMenu = document.getElementById('js-hg-menu');
+window.addEventListener('load', function(){
+    var hamburgerButton = document.getElementById('js-hamburger-button');
+    var crossButton = document.getElementById('js-cross-button');
+    var hamburgerMenu = document.getElementById('js-hg-menu');
 
     // スムーススクロールと競合防ぐため細かく選択している
-    const hamburgerMenuList = document.querySelectorAll('#js-hg-menu a[href^="#"]');
+    var hamburgerMenuList = document.querySelectorAll('#js-hg-menu a[href^="#"]');
 
     // ハンバーガーメニューをクリックしてメニューを表示する
     hamburgerButton.addEventListener('click', function () {
@@ -45,4 +45,4 @@ window.onload = function () {
             hamburgerMenuOff();
         }
     });
-}
+});

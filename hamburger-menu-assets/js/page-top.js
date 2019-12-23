@@ -1,7 +1,7 @@
 'use strict';
 
 // スクロール時のページトップへ移動ボタンのフェードイン
-window.onload = function () {
+window.addEventListener('load', function(){
     var scrollMvPx = 100; //設定した数値分のpxを移動するとページトップへ移動ボタンがフェードインする
     var minimalPageTop = document.getElementById('js-minimal-page-top');
     var pageTopOn = false;
@@ -14,4 +14,4 @@ window.onload = function () {
             pageTopOn = false;
         }
     };
-}
+});

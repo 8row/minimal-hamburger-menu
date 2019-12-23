@@ -1,6 +1,6 @@
 'use strict';
 
-window.onload = function () {
+window.addEventListener('load', function(){
     var breakPoint = 768; //ハンバーガーメニューとヘッダーメニューの表示を切り替えるディスプレイ幅
     var hamburgerButton = document.getElementById('js-hamburger-button');
     var crossButton = document.getElementById('js-cross-button');
@@ -88,4 +88,4 @@ window.onload = function () {
             hamburgerMenuOff();
         }
     });
-}
+});
